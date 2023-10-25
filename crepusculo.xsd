@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="crepusculo" />
+    <xs:element name="crepusculo" type="tipos_de_personaje" />
 
-  <xs:complexType name="tipos_de_personaje">
-  </xs:complexType>
+    <xs:complexType name="tipos_de_personaje" mixed="true">
+        <xs:sequence>
+            <xs:element name="protagonista" type="tipos_de_personaje" />
+        </xs:sequence>
+    </xs:complexType> 
+    </xs:complexType name="tipoprotagonista">
+        <xs:sequence>
+            <xs:element name="actores" type="tipoactores" maxOccurs="unBound" />
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string" />
+        <xs:attribute name="id" type="xs:integer" />
+    </xs:complexType>
 </xs:schema>
