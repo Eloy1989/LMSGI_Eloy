@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crepusculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="crepusculo.xsd"> varios personajes 
+    <protagonistas nombre="principales">
+        <actores nombre="James" Id= 582 />
+        <actores nombre="Sara" Id= 743 />
+        <actores nombre="Laura" Id= 935 />
+        <actores nombre="Steven" Id= 764 />
+    </protagonistas>
+</crepusculo>
