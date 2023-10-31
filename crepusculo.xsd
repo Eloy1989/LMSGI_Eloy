@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="crepusculo" type="tipos_de_personaje" />
+    <xs:element name="crepusculo" type="tipos_de_personaje"/>
 
     <xs:complexType name="tipos_de_personaje" mixed="true">
         <xs:sequence>
-            <xs:element name="protagonista" type="tipos_de_personaje" />
+            <xs:element name="protagonistas" type="tipos_de_personaje"/>
+            <xs:element name="vampiros" type="tipo_vampiro"/>
+            <xs:element name="lobo" type="tipo_lobo"/>
+            <xs:element name="lugar_filmacion" type="tipolugar"/>
         </xs:sequence>
     </xs:complexType> 
-    </xs:complexType name="tipoprotagonista">
+   
+    <xs:complexType name="tipos_de_personaje">
         <xs:sequence>
-            <xs:element name="actores" type="tipoactores" maxOccurs="unBound" />
+            <xs:element name="actores" type="tipoactores" maxOccurs="unBounded"/>
         </xs:sequence>
-        <xs:attribute name="nombre" type="xs:string" />
-        <xs:attribute name="id" type="xs:integer" />
     </xs:complexType>
+    
+    </xs:complexType name="tipoactores"> 
+        <xs:attribute name="nombre" type="xs:string" maxOccurs="unBounded"/>
+        <xs:attribute name="Id" type="xs:integer" maxOccurs="unBounded"/> 
+    </xs:complexType>
+    
+    <xs:complexType name="tipo_vampiro">
+        <xs:attribute name="nombre" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipo_lobo">
+        <xs:attribute name="nombre" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipolugar">
+        <xs:all>
+            <xs:element name="fecha" type="xs:integer"/>
+        </xs:all>
+        <xs:attribute name="nombre" type="xs:string"/>
+    </xs:complexType>
+
+
 </xs:schema>
